@@ -10,6 +10,7 @@ const hamburger = document.querySelector("[data-hamburger]");
 const productTabs = document.querySelectorAll("[data-category]");
 const allItems = document.querySelectorAll("[data-catalogue]");
 const cardRow = document.querySelector("[data-card-row]");
+const noItems = document.querySelector("[data-no-items]");
 
 // ==================================
 // 1. Toggle humbugger menu;
@@ -44,6 +45,7 @@ productTabs.forEach(productTab => {
 			}
 		}
 
+		let count = 0;
 		if (value == "Babies"){
 			for (let item of allItems){
 				const tag = item.innerText;
@@ -52,9 +54,10 @@ productTabs.forEach(productTab => {
 				}
 				else {
 					item.parentElement.parentElement.parentElement.style.display = "block";
+					count++;
 				}
-				cardRow.style.justifyContent = "space-evenly";
 			}
+				cardRow.style.justifyContent = "space-evenly";
 		}
 		else if (value == "Male"){
 			for (let item of allItems){
@@ -64,6 +67,7 @@ productTabs.forEach(productTab => {
 				}
 				else {
 					item.parentElement.parentElement.parentElement.style.display = "block";
+					count++;
 				}
 				cardRow.style.justifyContent = "space-evenly";
 			}
@@ -76,6 +80,7 @@ productTabs.forEach(productTab => {
 				}
 				else {
 					item.parentElement.parentElement.parentElement.style.display = "block";
+					count++;
 				}
 				cardRow.style.justifyContent = "space-evenly";
 			}
@@ -84,7 +89,14 @@ productTabs.forEach(productTab => {
 			for (let item of allItems){
 				item.parentElement.parentElement.parentElement.style.display = "initial";
 				cardRow.style.justifyContent = "space-between";
+				count++;
 			}
+		}
+		if (count < 1){
+			noItems.classList.add("add_flex");
+		}
+		else{
+			noItems.classList.remove("add_flex");
 		}
 	})
 })

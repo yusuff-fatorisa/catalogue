@@ -146,6 +146,28 @@ article .tab-panel {
   font-weight: 500;
 }
 
+/*Styling for "No Items" display DIV*/
+.no-items {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-family: "Merriweather", serif;
+  color: orangered;
+  font-size: 32px;
+  text-align: center;
+  height: 130px;
+  background-color: beige;
+  border: 1px solid beige;
+  border-radius: 10px;
+  padding-inline: 7.5px;
+}
+
+/* JavaScript Manipulative Classes */
+.add_flex {
+  display: flex !important;
+}
+
 .card_row .percard {
   position: relative;
   margin-bottom: 40px;
@@ -359,6 +381,9 @@ footer .newsletter .input_card button {
   .container {
     padding: 0 20px;
   }
+  .no-items {
+    font-size: 23px !important;
+  }
   footer .container {
     display: block;
   }
@@ -435,8 +460,8 @@ footer .newsletter .input_card button {
     background: #333333;
     margin: 5px;
   }
-  .add_flex {
-    display: flex !important;
+  .no-items {
+    font-size: 28px;
   }
 }
 @media (max-width: 850px) {
