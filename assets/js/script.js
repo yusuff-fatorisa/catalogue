@@ -12,6 +12,9 @@ const allItems = document.querySelectorAll("[data-catalogue]");
 const cardRow = document.querySelector("[data-card-row]");
 const noItems = document.querySelector("[data-no-items]");
 
+const search = document.querySelector("[data-search-product]");
+const percards = document.querySelectorAll("[data-percard]");
+
 // ==================================
 // 1. Toggle humbugger menu;
 // By default, the .link tag should 
@@ -20,9 +23,7 @@ const noItems = document.querySelector("[data-no-items]");
 
 
 hamburger.addEventListener("click", () => {
-	console.log("start");
 	linkBar.classList.toggle("add_flex");
-	console.log("end");
 })
 
 
@@ -108,3 +109,24 @@ productTabs.forEach(productTab => {
 // 2. Display products based on 
 // search keywords in the input fields.
 // ==================================
+
+search.addEventListener("input", (e) => {
+	noItems.classList.add("add_flex");
+	cardRow.style.justifyContent = "center";
+	percards.forEach(percard => {
+		percard.style.display = "none";
+		const paraText = percard.querySelector("p").innerText.toLowerCase();
+		const categoryText = percard.querySelector("[data-catalogue]").innerText.toLowerCase();
+
+		const inputText = e.target.value.trimStart().toLowerCase();
+		if (inputText == " ") {
+			console.log("Empty");
+		}
+
+		if (paraText.includes(inputText) || categoryText.includes(inputText)) {
+			percard.style.display = "block";
+			noItems.classList.remove("add_flex");
+			cardRow.style.justifyContent = "space-evenly";
+		}
+	})
+})
