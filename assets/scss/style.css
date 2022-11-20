@@ -39,9 +39,15 @@ header nav ul li {
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0em;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+header nav ul li:hover {
+  border-bottom: 2px solid #ccc;
 }
 header .link {
   width: 80%;
+  height: 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -50,6 +56,10 @@ header .link .center_link {
 }
 header .link .account {
   width: 15%;
+}
+
+header .hamburger {
+  cursor: pointer;
 }
 
 article .tabset {
@@ -144,6 +154,7 @@ article .tab-panel {
   border: 0;
   color: #ffffff;
   font-weight: 500;
+  cursor: pointer;
 }
 
 /*Styling for "No Items" display DIV*/
@@ -340,7 +351,7 @@ footer .newsletter .input_card input {
 footer .newsletter .input_card button {
   border: 0;
   padding: 15px 10px;
-  width: 25%;
+  width: 33%;
   cursor: pointer;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -392,9 +403,9 @@ footer .newsletter .input_card button {
   }
 }
 @media (min-width: 768px) {
-  .hamburger {
+  /*.hamburger {
     display: none;
-  }
+  }*/
   .card_row {
     display: flex;
     flex-wrap: wrap;
@@ -439,6 +450,7 @@ footer .newsletter .input_card button {
     top: 67px;
     right: 0;
     width: 300px !important;
+    height: unset;
   }
   header .link .center_link {
     box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.07);

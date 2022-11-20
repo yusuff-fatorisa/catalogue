@@ -94,6 +94,7 @@ productTabs.forEach(productTab => {
 			}
 		}
 		if (count < 1){
+			noItems.textContent = "No Items to display for this Category";
 			noItems.classList.add("add_flex");
 		}
 		else{
@@ -111,8 +112,10 @@ productTabs.forEach(productTab => {
 // ==================================
 
 search.addEventListener("input", (e) => {
+	noItems.textContent = "No Items to display for this Search";
 	noItems.classList.add("add_flex");
 	cardRow.style.justifyContent = "center";
+	
 	percards.forEach(percard => {
 		percard.style.display = "none";
 		const paraText = percard.querySelector("p").innerText.toLowerCase();
