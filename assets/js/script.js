@@ -119,14 +119,10 @@ search.addEventListener("input", (e) => {
 	percards.forEach(percard => {
 		percard.style.display = "none";
 		const paraText = percard.querySelector("p").innerText.toLowerCase();
-		const categoryText = percard.querySelector("[data-catalogue]").innerText.toLowerCase();
 
 		const inputText = e.target.value.trimStart().toLowerCase();
-		if (inputText == " ") {
-			console.log("Empty");
-		}
 
-		if (paraText.includes(inputText) || categoryText.includes(inputText)) {
+		if (paraText.includes(inputText)) {
 			percard.style.display = "block";
 			noItems.classList.remove("add_flex");
 			cardRow.style.justifyContent = "space-evenly";
